@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="BizTalkReport">
+      <DataSourceReference>BizTalkReport</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>bd8ffa35-0de5-40e1-9862-47a91769da95</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="OrchestrationSendPort">
+      <Query>
+        <DataSourceName>BizTalkReport</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@OrchestrationId">
+            <Value>=Parameters!OrchestrationId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>GetOrchestrationSendPort</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Orchestration_OrchestrationName">
+          <DataField>Orchestration_OrchestrationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Orchestration_OrchestrationId">
+          <DataField>Orchestration_OrchestrationId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Orchestration_LogicalPortType">
+          <DataField>Orchestration_LogicalPortType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Orchestration_LogicalPortBindingType">
+          <DataField>Orchestration_LogicalPortBindingType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Orchestration_LogicalPortName">
+          <DataField>Orchestration_LogicalPortName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_SendPortName">
+          <DataField>SendPort_SendPortName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_SendPortGroupName">
+          <DataField>SendPort_SendPortGroupName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_SendPortId">
+          <DataField>SendPort_SendPortId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_IsSendPortGroup">
+          <DataField>SendPort_IsSendPortGroup</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_SendPortAdapter">
+          <DataField>SendPort_SendPortAdapter</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_SendPortAdapterDetail">
+          <DataField>SendPort_SendPortAdapterDetail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_SendPortAddress">
+          <DataField>SendPort_SendPortAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_ReceivePipeline">
+          <DataField>SendPort_ReceivePipeline</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_SendPipeline">
+          <DataField>SendPort_SendPipeline</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_MapName">
+          <DataField>SendPort_MapName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_InDoc">
+          <DataField>SendPort_InDoc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_OutDoc">
+          <DataField>SendPort_OutDoc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_MapDirection">
+          <DataField>SendPort_MapDirection</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_SendHandler">
+          <DataField>SendPort_SendHandler</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_DynamicPort">
+          <DataField>SendPort_DynamicPort</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_FilterPropertyName">
+          <DataField>SendPort_FilterPropertyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_FilterPropertyOperator">
+          <DataField>SendPort_FilterPropertyOperator</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendPort_FilterPropertyValue">
+          <DataField>SendPort_FilterPropertyValue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="table1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>0.375in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.67708in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.11459in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.19in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Image Name="Image1">
+                          <Source>Embedded</Source>
+                          <Value>=IIF(String.IsNullOrEmpty(Fields!SendPort_ReceivePipeline.Value), "OneWay", "TwoWay")</Value>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>1pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
+                            <PaddingTop>1pt</PaddingTop>
+                            <PaddingBottom>1pt</PaddingBottom>
+                          </Style>
+                        </Image>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SendPort_SendPortName">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(String.IsNullOrEmpty(Fields!SendPort_SendPortName.Value),
+"(" &amp; Fields!Orchestration_LogicalPortName.Value &amp; "): " &amp; Fields!Orchestration_LogicalPortBindingType.Value
+, IIf(Fields!SendPort_IsSendPortGroup.Value = "Yes", Fields!SendPort_SendPortGroupName.Value + " (SPG): " + Fields!SendPort_SendPortName.Value + " (SP)", Fields!SendPort_SendPortName.Value))</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>SendPort_SendPortName</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGray</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#b7e0fe</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="SendPort_SendPortAdapter">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(String.IsNullOrEmpty(Fields!SendPort_SendPortAdapterDetail.Value), Fields!SendPort_SendPortAdapter.Value, 
+Fields!SendPort_SendPortAdapter.Value &amp; " (" &amp; Fields!SendPort_SendPortAdapterDetail.Value &amp; ")")</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>SendPort_SendPortAdapter</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>DarkGray</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <LeftBorder>
+                              <Style>None</Style>
+                            </LeftBorder>
+                            <BackgroundColor>#b7e0fe</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="table1_Details_Group">
+                    <DataElementName>Detail</DataElementName>
+                  </Group>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                  <DataElementName>Detail_Collection</DataElementName>
+                  <DataElementOutput>Output</DataElementOutput>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>OrchestrationSendPort</DataSetName>
+            <Height>0.19in</Height>
+            <Width>4.16667in</Width>
+            <Style />
+          </Tablix>
+        </ReportItems>
+        <Height>0.23292in</Height>
+        <Style />
+      </Body>
+      <Width>4.18958in</Width>
+      <Page>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="OrchestrationId">
+      <DataType>Integer</DataType>
+      <Prompt>Orchestration Id</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="TwoWay">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="OneWay">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAADAAAAAbCAYAAAA6aQxyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAQzSURBVFhHzZddbJNVGMf/7fv2e1v3wUaJzdxEJ8FGMDIWAyaCwwsTguhuTDQjKuKFmXhjSIy6CyAmgHN4odxoMJhgolPCxS7cBpplgm6grKSEjcHGwqxle9uuX+/bj/mct2d2de02jInnlzRtzv+8ec//PM9znlPDHIH/mQx9jNmf98y/fe4/hS3i6DfD+PX63ezAPSCEAUZVmRV7PuqHbyLIR1aGMAbK7CZUOy3Yf+IihkZXHglhDJhkIywmCTAYcODzwRVHQhgDlSVmxNUMLLIEWZLx8pGfcGlk+UgIY2Crx4WWLfdjSomRCSNqKuzYe/xn+G4vHQkhjtGFHP3Wi1N9N1BXUwo1lUEyncaHex7HpoZVfEY+whlgdH5/FafOjWFNpQPJZFo3cez1Rmyor+IzcgiTQgt567lH0Lp9LabDCZipsFldtB7px6XRaT4jR1EDk4EoNZYANNqBQigRFYNUZIFQgo/ks5yuUXpcGVMweifMR/J5c9d6vLrjQYwHZiGTAfcqB17p6Mdv/zBRMIV6L9/Bie7riMSTWFfrxDstHrioqOYZ90dw6PQVTE7H4Cq3oo1etnFtJVeX18NRDZ1nfPjl2l3IJgNe2laPF7bWczWfju+8OH3+FlyVdiTJtJpK43DrY2haV6PriyIwQ2E71uXFzKwKSTLigi+Akz1jXM3qX/aMYPimAslowAjt4MneEa4C6cxcYX3BPg34/kT34CTSNBaOJfHVuZtFI/H2bg9eJIOTFAmTZICZ1nTgiyF4xxVdX2RAS2co9zRqKrK+APYAy8V5bFYZAV2n85rp9M0iFU2kdF2jHSqoq7lUZJvDAm+m3beSHtPSCEY0rpJX/j3PfqqJNvrEtRQ9Y4TDImNXey+u
+kolFBqpKrdi9pZZekoCfzmSbRcLOzW6ughZlxLONbtYw8QfprEaaN94HBxlj2Mzykjpj88PVcFc74J+JYzoUx6aHquCpq+DqYgOzFCXf7RA1OCPlvAFRMvzUoy7UOG2Fa4A5/WFoCv5gTH/Zhgdy+ctg+uXRGQzfUrC+tgxPetZwJUuG0ujCtUBRnXFjKowfh/36HWgbLYZd5uZhCyL/f7PvkwH4xkO0uRaEYhqZt+P4G00oL7GI2QcWsvODHkq/FJw2M8KJJOwWI862N5OStShkH8gyh+cP9um1wxYfojoyUxGfbd9BWi4+QhqI0Y6/9vEAnXgqLd6EYFRF3WoHug8+w2fkEM5AJpNB26cXMTYVQYXDAiWmosFdhs59TXxGPsLVQMuhPv0YL7dn06bULqHr3e16TyqEUBE4/PXvmPDHUO4wI0inTalNwpn3m4suniGUgbrVJXq3DVFTY2nT9d7TXCmOUAZKqAkqdE9qcDvRsbdRvwksh1AGZLpWsL+Wn7U9AbvVxEeXRqgi9k4o8NTmrhQrQfhOvDTAX75s1KIGuRodAAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>345dec4d-4359-447e-b4cd-180c38fb7b15</rd:ReportID>
+</Report>

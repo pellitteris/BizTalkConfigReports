@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="BizTalkReport">
+      <DataSourceReference>BizTalkReport</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>ace1028c-6f6a-491c-b04d-d6ea80dfb6bb</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="OrchestrationReceivePort">
+      <Query>
+        <DataSourceName>BizTalkReport</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@OrchestrationId">
+            <Value>=Parameters!OrchestrationId.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>GetOrchestrationReceivePort</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Orchestration_OrchestrationName">
+          <DataField>Orchestration_OrchestrationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Orchestration_OrchestrationId">
+          <DataField>Orchestration_OrchestrationId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Orchestration_LogicalPortType">
+          <DataField>Orchestration_LogicalPortType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Orchestration_LogicalPortBindingType">
+          <DataField>Orchestration_LogicalPortBindingType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Orchestration_LogicalPortName">
+          <DataField>Orchestration_LogicalPortName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Orchestration_ReceivePortActivating">
+          <DataField>Orchestration_ReceivePortActivating</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ReceivePortName">
+          <DataField>ReceivePort_ReceivePortName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ReceivePortId">
+          <DataField>ReceivePort_ReceivePortId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ReceiveLocationIsPrimary">
+          <DataField>ReceivePort_ReceiveLocationIsPrimary</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ReceiveLocationName">
+          <DataField>ReceivePort_ReceiveLocationName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ReceiveLocationId">
+          <DataField>ReceivePort_ReceiveLocationId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ReceiveLocationAdapter">
+          <DataField>ReceivePort_ReceiveLocationAdapter</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ReceiveLocationAdapterDetail">
+          <DataField>ReceivePort_ReceiveLocationAdapterDetail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ReceiveLocationAddress">
+          <DataField>ReceivePort_ReceiveLocationAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ReceivePipeline">
+          <DataField>ReceivePort_ReceivePipeline</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_SendPipeline">
+          <DataField>ReceivePort_SendPipeline</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_ArchiveDirectory">
+          <DataField>ReceivePort_ArchiveDirectory</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_MapName">
+          <DataField>ReceivePort_MapName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_InDoc">
+          <DataField>ReceivePort_InDoc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_OutDoc">
+          <DataField>ReceivePort_OutDoc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceivePort_HostName">
+          <DataField>ReceivePort_HostName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="table1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>0.21875in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5625in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.94792in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.58333in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.30903in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ReceivePort_ReceivePortName">
+                          <CanGrow>true</CanGrow>
+                          <HideDuplicates>table1_ReceivePort_ReceivePortName</HideDuplicates>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIf(String.IsNullOrEmpty(Fields!ReceivePort_ReceivePortName.Value),
+"(" &amp; Fields!Orchestration_LogicalPortName.Value &amp; "): " &amp; Fields!Orchestration_LogicalPortBindingType.Value, Fields!ReceivePort_ReceivePortName.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ReceivePort_ReceivePortName</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Silver</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <LeftBorder>
+                              <Color>Silver</Color>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Silver</Color>
+                              <Style>Solid</Style>
+                            </RightBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <ColSpan>3</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell />
+                    <TablixCell />
+                    <TablixCell>
+                      <CellContents>
+                        <Image Name="Image1">
+                          <Source>Embedded</Source>
+                          <Value>OneWay</Value>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>1pt</PaddingRight>
+                            <PaddingTop>1pt</PaddingTop>
+                            <PaddingBottom>1pt</PaddingBottom>
+                          </Style>
+                        </Image>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.29417in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>Silver</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Silver</Color>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ReceivePort_ReceiveLocationName">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ReceivePort_ReceiveLocationName.Value</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ReceivePort_ReceiveLocationName</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>DimGray</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>DimGray</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>DimGray</Color>
+                              <Style>Solid</Style>
+                            </LeftBorder>
+                            <BackgroundColor>#b7e0fe</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ReceivePort_ReceiveLocationAdapter">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(String.IsNullOrEmpty(Fields!ReceivePort_ReceiveLocationAdapterDetail.Value), Fields!ReceivePort_ReceiveLocationAdapter.Value, 
+Fields!ReceivePort_ReceiveLocationAdapter.Value &amp; " (" &amp; Fields!ReceivePort_ReceiveLocationAdapterDetail.Value &amp; ")")</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ReceivePort_ReceiveLocationAdapter</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>DimGray</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>DimGray</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <RightBorder>
+                              <Color>DimGray</Color>
+                              <Style>Solid</Style>
+                            </RightBorder>
+                            <BackgroundColor>#b7e0fe</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="table1_ReceivePort_ReceivePortName">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!ReceivePort_ReceivePortName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!ReceivePort_ReceivePortName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="table1_Details_Group">
+                        <DataElementName>Detail</DataElementName>
+                      </Group>
+                      <TablixMembers>
+                        <TablixMember />
+                        <TablixMember />
+                      </TablixMembers>
+                      <DataElementName>Detail_Collection</DataElementName>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>OrchestrationReceivePort</DataSetName>
+            <Height>0.6032in</Height>
+            <Width>4.3125in</Width>
+            <Style />
+          </Tablix>
+        </ReportItems>
+        <Height>0.6407in</Height>
+        <Style />
+      </Body>
+      <Width>4.33333in</Width>
+      <Page>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="OrchestrationId">
+      <DataType>Integer</DataType>
+      <Prompt>Orchestration Id</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="OneWay">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAADAAAAAbCAYAAAA6aQxyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAQzSURBVFhHzZddbJNVGMf/7fv2e1v3wUaJzdxEJ8FGMDIWAyaCwwsTguhuTDQjKuKFmXhjSIy6CyAmgHN4odxoMJhgolPCxS7cBpplgm6grKSEjcHGwqxle9uuX+/bj/mct2d2de02jInnlzRtzv+8ec//PM9znlPDHIH/mQx9jNmf98y/fe4/hS3i6DfD+PX63ezAPSCEAUZVmRV7PuqHbyLIR1aGMAbK7CZUOy3Yf+IihkZXHglhDJhkIywmCTAYcODzwRVHQhgDlSVmxNUMLLIEWZLx8pGfcGlk+UgIY2Crx4WWLfdjSomRCSNqKuzYe/xn+G4vHQkhjtGFHP3Wi1N9N1BXUwo1lUEyncaHex7HpoZVfEY+whlgdH5/FafOjWFNpQPJZFo3cez1Rmyor+IzcgiTQgt567lH0Lp9LabDCZipsFldtB7px6XRaT4jR1EDk4EoNZYANNqBQigRFYNUZIFQgo/ks5yuUXpcGVMweifMR/J5c9d6vLrjQYwHZiGTAfcqB17p6Mdv/zBRMIV6L9/Bie7riMSTWFfrxDstHrioqOYZ90dw6PQVTE7H4Cq3oo1etnFtJVeX18NRDZ1nfPjl2l3IJgNe2laPF7bWczWfju+8OH3+FlyVdiTJtJpK43DrY2haV6PriyIwQ2E71uXFzKwKSTLigi+Akz1jXM3qX/aMYPimAslowAjt4MneEa4C6cxcYX3BPg34/kT34CTSNBaOJfHVuZtFI/H2bg9eJIOTFAmTZICZ1nTgiyF4xxVdX2RAS2co9zRqKrK+APYAy8V5bFYZAV2n85rp9M0iFU2kdF2jHSqoq7lUZJvDAm+m3beSHtPSCEY0rpJX/j3PfqqJNvrEtRQ9Y4TDImNXey+u
+kolFBqpKrdi9pZZekoCfzmSbRcLOzW6ughZlxLONbtYw8QfprEaaN94HBxlj2Mzykjpj88PVcFc74J+JYzoUx6aHquCpq+DqYgOzFCXf7RA1OCPlvAFRMvzUoy7UOG2Fa4A5/WFoCv5gTH/Zhgdy+ctg+uXRGQzfUrC+tgxPetZwJUuG0ujCtUBRnXFjKowfh/36HWgbLYZd5uZhCyL/f7PvkwH4xkO0uRaEYhqZt+P4G00oL7GI2QcWsvODHkq/FJw2M8KJJOwWI862N5OStShkH8gyh+cP9um1wxYfojoyUxGfbd9BWi4+QhqI0Y6/9vEAnXgqLd6EYFRF3WoHug8+w2fkEM5AJpNB26cXMTYVQYXDAiWmosFdhs59TXxGPsLVQMuhPv0YL7dn06bULqHr3e16TyqEUBE4/PXvmPDHUO4wI0inTalNwpn3m4suniGUgbrVJXq3DVFTY2nT9d7TXCmOUAZKqAkqdE9qcDvRsbdRvwksh1AGZLpWsL+Wn7U9AbvVxEeXRqgi9k4o8NTmrhQrQfhOvDTAX75s1KIGuRodAAAAAElFTkSuQmCC</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>c4251fc2-62e3-4c30-b017-d5aeb3b470d1</rd:ReportID>
+</Report>
